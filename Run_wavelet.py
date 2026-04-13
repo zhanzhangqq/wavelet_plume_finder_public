@@ -35,7 +35,7 @@ def run_wavelet(inputpath, outputpath, flight, file_name, scale, sigma_factor):
     denoise_wavelet = 'bior3.5'
 
     # Define the number of levels
-    n = math.floor(np.log2(rows) // 2)
+    n = math.floor(np.log2(min(rows, cols)) // 2)
 
     # Define other parameters
     noiseSigma = 16  # factor of the denoising soft threshold (range: 16, 32, 64, a higher value helps remove more small masks that are likely to be noise)
